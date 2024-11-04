@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3kjyd7hqj36f"]
+
+[ext_resource type="PackedScene" uid="uid://s7whaymouhu5" path="res://Scenes/gridmap.tscn" id="1_lia0i"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Gridmap" parent="." instance=ExtResource("1_lia0i")]

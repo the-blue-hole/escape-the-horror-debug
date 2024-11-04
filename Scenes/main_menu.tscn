@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://l3xwhuuwcsrf"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_6x5y2"]
+[ext_resource type="Texture2D" uid="uid://dip4babecix3t" path="res://Textures/game logo.png" id="1_atwoj"]
+[ext_resource type="Texture2D" uid="uid://n6le1j0so15n" path="res://IMG_0357.PNG" id="2_b50wp"]
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6x5y2")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 670.0
+color = Color(0, 0, 0, 1)
+
+[node name="game_logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -630.0
+offset_top = -449.0
+offset_right = 170.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_atwoj")
+expand_mode = 3
+
+[node name="dev_logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.759
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_b50wp")
+expand_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 455.0
+offset_right = 260.0
+offset_bottom = 523.0
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 544.0
+offset_right = 260.0
+offset_bottom = 612.0
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 544.0
+offset_right = 480.0
+offset_bottom = 612.0
+theme_override_font_sizes/font_size = 40
+text = "CREDITS"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 455.0
+offset_right = 480.0
+offset_bottom = 523.0
+theme_override_font_sizes/font_size = 40
+text = "ESCAPE"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 614.0
+offset_right = 1043.0
+offset_bottom = 645.0
+text = "Made by the blue hole"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 10.0
+offset_right = 1144.0
+offset_bottom = 42.0
+text = "V1.0"
+
+[connection signal="pressed" from="Button" to="." method="play"]
+[connection signal="pressed" from="Button4" to="." method="escape"]

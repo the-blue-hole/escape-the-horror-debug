@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgpfaltis1tev"
+path="res://.godot/imported/block heel run 2.mp3-a181b5de7c0697c75a2c4d4ec89b45c6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/block heel run 2.mp3"
+dest_files=["res://.godot/imported/block heel run 2.mp3-a181b5de7c0697c75a2c4d4ec89b45c6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

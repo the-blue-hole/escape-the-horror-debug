@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4pe0k0gc7331"]
+
+[ext_resource type="PackedScene" uid="uid://bo70eyf0txxpu" path="res://Models/cuboster.glb" id="1_lssnr"]
+
+[node name="cuboster" instance=ExtResource("1_lssnr")]

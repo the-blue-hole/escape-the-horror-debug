@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3menunxshg4l"
+path="res://.godot/imported/block heel run.mp3-8a5a74982dc6e8bb4b4efeb7e43be561.mp3str"
+
+[deps]
+
+source_file="res://Sounds/block heel run.mp3"
+dest_files=["res://.godot/imported/block heel run.mp3-8a5a74982dc6e8bb4b4efeb7e43be561.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

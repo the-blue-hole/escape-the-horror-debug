@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://u6gl8mkpfkap"]
+
+[ext_resource type="Material" uid="uid://vc26k02hbsov" path="res://Materials/wall2.tres" id="1_asr8f"]
+[ext_resource type="Script" path="res://Scripts/monster.gd" id="1_v5h2n"]
+[ext_resource type="AudioStream" uid="uid://ddvepd0kknfmh" path="res://Sounds/jumpscare-94984.mp3" id="3_jclfk"]
+[ext_resource type="Script" path="res://Scripts/enemy_raycast.gd" id="4_whili"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jdea7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_05hsu"]
+
+[node name="Monster" type="CharacterBody3D" groups=["monster"]]
+script = ExtResource("1_v5h2n")
+scene_name = "death"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_jdea7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_05hsu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.235194, 0, 0, 0, 1, 0, 0.355801, -0.205597)
+material_override = ExtResource("1_asr8f")
+mesh = SubResource("CapsuleMesh_05hsu")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+
+[node name="jumpscare_camera" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.4, -1.39403)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="jumpscare_camera"]
+layers = 16384
+light_energy = 0.5
+omni_range = 2.0
+
+[node name="jumpscare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jclfk")
+volume_db = 0.5
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1.735, 0, 0, 0, -7.58393e-08, -1.735, 0, 1.735, -7.58393e-08, 0, 0, -0.418337)
+collision_mask = 3
+script = ExtResource("4_whili")
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="pick_new_destination"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="on_navigation_agent_3d_velocity_computed"]

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://djcnjyxxx2fns"]
+
+[ext_resource type="Texture2D" uid="uid://nn8c8tatwtn2" path="res://Textures/scary_painting1.png" id="1_31glr"]
+
+[resource]
+albedo_texture = ExtResource("1_31glr")

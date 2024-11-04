@@ -1,0 +1,139 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4qtonmefv41o"]
+
+[ext_resource type="Texture2D" uid="uid://c5nb4mou2dy4" path="res://Textures/paper.png" id="1_82nes"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_whrk1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_stanf"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sprint_slider" type="HSlider" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -83.0
+offset_right = 389.0
+grow_vertical = 0
+theme_override_icons/grabber = SubResource("ImageTexture_whrk1")
+max_value = 1.0
+step = 0.0
+value = 1.0
+
+[node name="interact_text" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -177.0
+offset_right = 89.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 30
+text = "[E] interact"
+
+[node name="paper" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -804.0
+offset_top = 41.0
+offset_right = 74.0
+offset_bottom = 1077.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_82nes")
+expand_mode = 1
+
+[node name="2" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -268.0
+offset_right = 211.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "hi you in dream and you 
+must die i left you couple things
+ to make it easier
+there aslo some monsters try avoiding them
+if they killed you 
+you just gonna return to the start and suffer and you 
+wont remember anything intill you finished
+at end there door lead to white path looking
+once you enter it you die and not teleport to another
+universe once you died you go to other universe
+i will be waiting for you in there so we can escape 
+oh wait no there 2 when you die you go to universe
+where you need to escape and kill monster
+or monsters i don't know anymore
+then you will find me waitinf for you
+don't get fool
+don't get too greedy
+it fake
+trust me
+don't do it
+i am YOU'R friend."
+label_settings = SubResource("LabelSettings_stanf")
+
+[node name="flashlight_stuff" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 487.0
+offset_top = 471.0
+offset_right = 527.0
+offset_bottom = 511.0
+
+[node name="flashlight_text" type="RichTextLabel" parent="flashlight_stuff"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -501.0
+offset_top = -8.0
+offset_right = -298.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 25
+text = "Flash Energy"
+
+[node name="flashlight_slider" type="HSlider" parent="flashlight_stuff"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -487.0
+offset_top = 10.0
+offset_right = -268.0
+offset_bottom = 78.0
+grow_vertical = 0
+theme_override_icons/grabber = SubResource("ImageTexture_whrk1")
+max_value = 1.0
+step = 0.0
+value = 1.0

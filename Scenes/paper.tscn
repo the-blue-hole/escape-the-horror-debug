@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dreb3ijwl3pwg"]
+
+[ext_resource type="Script" path="res://Scripts/paper.gd" id="1_gogjo"]
+[ext_resource type="AudioStream" uid="uid://b63jcpij0vuhg" path="res://Sounds/paper-collect-8-186722.mp3" id="2_jxtg5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bi1du"]
+size = Vector3(0.929749, 1.59082, 1.56167)
+
+[sub_resource type="QuadMesh" id="QuadMesh_kicv7"]
+
+[node name="Paper" type="StaticBody3D"]
+script = ExtResource("1_gogjo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.923407, 0, 0, 0, 0.0812864, 3.55271e-15, 0, 0, 0.923407, 0.00143719, 0.0240128, -0.00679185)
+shape = SubResource("BoxShape3D_bi1du")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, -6.11959e-08, 1, 0, -1.4, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_kicv7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jxtg5")
+volume_db = 1.0

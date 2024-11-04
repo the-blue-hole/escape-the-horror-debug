@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://ob0lckfy8l08"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_j5oyg"]
+
+[node name="Pause_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j5oyg")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1172.0
+offset_bottom = 684.0
+color = Color(0, 0, 0, 0.572549)
+
+[node name="Stopped_text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 14.0
+offset_right = 796.0
+offset_bottom = 151.0
+theme_override_font_sizes/normal_font_size = 100
+text = "STOPPED"
+
+[node name="Continue_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 158.0
+offset_right = 665.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 35
+text = "CONTINUE"
+
+[node name="Setting_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 258.0
+offset_right = 665.0
+offset_bottom = 343.0
+theme_override_font_sizes/font_size = 35
+text = "SETTING"
+
+[node name="controls_the_soul_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 351.0
+offset_right = 665.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 35
+text = "CONTROLS
+ THE SOUL"
+
+[node name="Leave_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 466.0
+offset_right = 665.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 35
+text = "LEAVE"
+
+[node name="Escape_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 559.0
+offset_right = 651.0
+offset_bottom = 635.0
+theme_override_font_sizes/font_size = 35
+text = "ESCAPE
+"
+
+[connection signal="pressed" from="Continue_button" to="." method="resume"]
+[connection signal="pressed" from="Leave_button" to="." method="back_to_menu"]
+[connection signal="pressed" from="Escape_button" to="." method="quit_game"]

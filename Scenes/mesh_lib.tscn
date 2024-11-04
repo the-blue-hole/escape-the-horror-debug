@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://s5vs338f1ati"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o1dln"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bb2y"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bncf0"]
+
+[node name="mesh_lib" type="Node3D"]
+
+[node name="cube" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_o1dln")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube/StaticBody3D"]
+shape = SubResource("BoxShape3D_0bb2y")
+
+[node name="cube2" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_bncf0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube2/StaticBody3D"]
+shape = SubResource("BoxShape3D_0bb2y")

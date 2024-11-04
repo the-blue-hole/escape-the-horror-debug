@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://cogmmex4s8ycy"]
+
+[ext_resource type="Material" uid="uid://d328c62fonp25" path="res://Materials/floor.tres" id="1_itk6g"]
+[ext_resource type="Script" path="res://Scripts/paiting.gd" id="1_nhcnr"]
+[ext_resource type="Material" uid="uid://c50oh7jdy5fh0" path="res://Materials/paper.tres" id="2_a8ytk"]
+[ext_resource type="AudioStream" uid="uid://ddvepd0kknfmh" path="res://Sounds/jumpscare-94984.mp3" id="4_kr33w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvh5p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hp5jp"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_f58tx"]
+
+[node name="Paiting" type="StaticBody3D"]
+script = ExtResource("1_nhcnr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.101342, 0, 0, 0, 1.36467, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_bvh5p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.035442, 0, 0, 0, 1.30206, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("1_itk6g")
+mesh = SubResource("BoxMesh_hp5jp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.06417e-08, 0, 1, 0, 1.23069, 0, -0.929774, 0, -4.37114e-08, 0.0180263, 0, 0)
+material_override = ExtResource("2_a8ytk")
+mesh = SubResource("QuadMesh_f58tx")
+
+[node name="jumpscare" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_kr33w")
+volume_db = 5.0
+max_distance = 15.0

@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjd3dcxyc7qg1"]
+
+[ext_resource type="Script" path="res://Scripts/light.gd" id="1_bv0se"]
+[ext_resource type="Material" uid="uid://nh0mrkx2b701" path="res://Materials/light.tres" id="1_yw1hu"]
+[ext_resource type="AudioStream" uid="uid://cqkli125vohha" path="res://Sounds/flickeringlight-90411.mp3" id="3_rsqct"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fwhqs"]
+
+[sub_resource type="Animation" id="Animation_ny8dk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_np7ae"]
+resource_name = "flashing_light"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5, 0.7, 0.9, 1.1, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.4, 0.9, 0.2, 1.0, 0.2, 0.76, 0.4, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ninaw"]
+_data = {
+"RESET": SubResource("Animation_ny8dk"),
+"flashing_light": SubResource("Animation_np7ae")
+}
+
+[node name="light" type="Node3D"]
+script = ExtResource("1_bv0se")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.788881, 0)
+material_override = ExtResource("1_yw1hu")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_fwhqs")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+shadow_enabled = true
+omni_range = 9.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ninaw")
+}
+
+[node name="flicker_sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_rsqct")
+volume_db = 5.0
+max_distance = 15.0

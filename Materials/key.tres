@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c1vsydih5v8w"]
+
+[ext_resource type="Texture2D" uid="uid://c0x3fnrgw88af" path="res://Textures/normal_floor2.png" id="1_yhwef"]
+[ext_resource type="Texture2D" uid="uid://cnssn37r04c8m" path="res://Textures/floor2_roughness.png" id="2_bu7ri"]
+
+[resource]
+albedo_color = Color(0.676737, 0.596012, 0.226749, 1)
+metallic = 0.5
+roughness_texture = ExtResource("2_bu7ri")
+normal_enabled = true
+normal_texture = ExtResource("1_yhwef")
+ao_enabled = true
+ao_light_affect = 0.1
+texture_filter = 5
